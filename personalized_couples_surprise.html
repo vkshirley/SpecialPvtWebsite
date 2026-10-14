@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7c6dc" />
+    <title>For My Special Baby ♡</title>
+    <style>
+      :root {
+        --rose: #ff5c91;
+        --rose-dark: #d83d78;
+        --pink: #ffe2ef;
+        --plum: #76508f;
+        --ink: #492c43;
+        --muted: #98768c;
+        --paper: #fffafd;
+        --gold: #ffe7a6;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 20px;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family:
+          ui-rounded,
+          "Trebuchet MS",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: var(--paper);
+        overflow-x: hidden;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      button:focus-visible {
+        outline: 3px solid #7e4aa5;
+        outline-offset: 4px;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .hero {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        padding: 40px 20px;
+        background:
+          radial-gradient(ellipse at 20% 20%, #ffd7e8 0, transparent 40%),
+          radial-gradient(ellipse at 85% 75%, #ffb4ce 0, transparent 36%),
+          linear-gradient(135deg, #8062ba, #d988c8 52%, #ff899e);
+        color: #fff;
+      }
+      .hero:before,
+      .hero:after {
+        content: "";
+        position: absolute;
+        border: 1px solid #ffffff55;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .hero:before {
+        width: min(85vw, 720px);
+        height: min(85vw, 720px);
+      }
+      .hero:after {
+        width: min(65vw, 540px);
+        height: min(65vw, 540px);
+      }
+      .floaters {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .heart {
+        position: absolute;
+        bottom: -60px;
+        color: #fff4fa;
+        text-shadow: 0 2px 14px #813b7d35;
+        animation: floatUp linear infinite;
+        opacity: 0.8;
+      }
+      @keyframes floatUp {
+        to {
+          transform: translateY(-120vh) rotate(55deg);
+          opacity: 0;
+        }
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 15px;
+        border: 1px solid #ffffff80;
+        border-radius: 999px;
+        background: #ffffff20;
+        backdrop-filter: blur(8px);
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font-size: clamp(3rem, 10vw, 7.2rem);
+        line-height: 0.98;
+        letter-spacing: -0.065em;
+        margin: 26px 0 20px;
+        text-shadow: 0 5px 28px #532c6240;
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--gold);
+      }
+      .hero-copy {
+        font-size: clamp(1rem, 2.6vw, 1.22rem);
+        line-height: 1.8;
+        max-width: 550px;
+        margin: 0 auto 30px;
+        color: #fff7fc;
+      }
+      .btn {
+        border: 0;
+        border-radius: 999px;
+        padding: 15px 25px;
+        font-weight: 800;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          filter 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        filter: brightness(1.02);
+      }
+      .btn-light {
+        color: #8a315d;
+        background: linear-gradient(135deg, #fff, #ffe1ed);
+        box-shadow: 0 12px 30px #6b255933;
+      }
+      .btn-rose {
+        color: white;
+        background: linear-gradient(135deg, #ff689a, #e04482);
+        box-shadow: 0 10px 24px #e0448233;
+      }
+      .btn-quiet {
+        background: #fae5ef;
+        color: #9a3e6c;
+      }
+      .micro {
+        font-size: 0.84rem;
+        opacity: 0.86;
+        margin-top: 16px;
+      }
+      main {
+        max-width: 1120px;
+        margin: auto;
+        padding: 58px 20px 76px;
+      }
+      .section-head {
+        text-align: center;
+        margin: 0 auto 30px;
+        max-width: 650px;
+      }
+      .eyebrow {
+        color: var(--rose-dark);
+        font-size: 0.75rem;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: clamp(2rem, 5.5vw, 3.4rem);
+        letter-spacing: -0.05em;
+        line-height: 1.08;
+        margin: 10px 0 12px;
+      }
+      .section-head p,
+      .muted {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .journey {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin: 35px 0 58px;
+      }
+      .journey button {
+        min-height: 175px;
+        text-align: left;
+        padding: 23px;
+        border: 1px solid #f4d8e5;
+        border-radius: 25px;
+        background: #fff;
+        box-shadow: 0 10px 32px #9f557b0d;
+        color: var(--ink);
+        transition: 0.2s;
+      }
+      .journey button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 40px #9f557b1b;
+      }
+      .journey .icon {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 17px;
+      }
+      .journey strong {
+        display: block;
+        font-size: 1.12rem;
+        margin-bottom: 6px;
+      }
+      .journey small {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .panel {
+        border: 1px solid #f4d8e5;
+        background: #fff;
+        border-radius: 30px;
+        padding: clamp(20px, 4vw, 40px);
+        box-shadow: 0 15px 50px #9f557b0c;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-top: 26px;
+      }
+      .photo-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 220px;
+        border-radius: 21px;
+        display: flex;
+        align-items: end;
+        padding: 17px;
+        color: white;
+        background: linear-gradient(145deg, #f7bad4, #a78bdb);
+        isolation: isolate;
+      }
+      .photo-card:nth-child(2) {
+        background: linear-gradient(145deg, #ffd7aa, #ff91ad);
+      }
+      .photo-card:nth-child(3) {
+        background: linear-gradient(145deg, #b9e5d7, #7a9ed1);
+      }
+      .photo-card:nth-child(4) {
+        background: linear-gradient(145deg, #ffb8ca, #d5a2ed);
+      }
+      .photo-card:nth-child(5) {
+        background: linear-gradient(145deg, #f4d9a4, #e89dbb);
+      }
+      .photo-card:nth-child(6) {
+        background: linear-gradient(145deg, #a7c7ee, #e6a7d4);
+      }
+      .photo-card:before {
+        content: "♡";
+        position: absolute;
+        z-index: -1;
+        right: 7px;
+        top: -36px;
+        font-size: 11rem;
+        line-height: 1;
+        color: #ffffff38;
+        transform: rotate(12deg);
+      }
+      .photo-card:after {
+        content: "";
+        position: absolute;
+        inset: 35% 0 0;
+        background: linear-gradient(transparent, #3e214d75);
+        z-index: -1;
+      }
+      .photo-card b {
+        font-size: 1.04rem;
+        text-shadow: 0 2px 8px #3d234b70;
+      }
+      .photo-card span {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 500;
+        opacity: 0.95;
+        margin-top: 5px;
+      }
+      .gallery-note {
+        margin: 18px 0 0;
+        text-align: center;
+        font-size: 0.84rem;
+        color: #a18496;
+      }
+      .message-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 17px;
+        margin-top: 50px;
+      }
+      .letter {
+        padding: clamp(24px, 4vw, 36px);
+        border-radius: 27px;
+        background: linear-gradient(145deg, #fff, #fff0f6);
+        border: 1px solid #f5d8e5;
+        min-height: 250px;
+      }
+      .letter h3 {
+        font-size: 1.45rem;
+        margin: 0 0 14px;
+      }
+      .letter p {
+        line-height: 1.9;
+        color: #806777;
+      }
+      .type-line {
+        min-height: 95px;
+        white-space: pre-line;
+      }
+      .cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1em;
+        background: var(--rose-dark);
+        vertical-align: -0.12em;
+        animation: blink 0.8s steps(2) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .secret {
+        margin-top: 17px;
+        padding: clamp(24px, 5vw, 42px);
+        border-radius: 28px;
+        background: #fff;
+        border: 1px dashed #e8a9c5;
+        text-align: center;
+      }
+      .secret-lock {
+        font-size: 2.5rem;
+      }
+      .secret input {
+        display: block;
+        width: min(100%, 310px);
+        margin: 17px auto 12px;
+        padding: 13px 16px;
+        border: 1px solid #e9c6d7;
+        border-radius: 13px;
+        background: #fffafd;
+        color: var(--ink);
+        font: inherit;
+      }
+      .secret-result {
+        max-width: 550px;
+        margin: 20px auto 0;
+        padding: 20px;
+        border-radius: 18px;
+        background: #fff0f6;
+        line-height: 1.8;
+        white-space: pre-line;
+      }
+      .final-section {
+        margin-top: 54px;
+        border-radius: 32px;
+        padding: clamp(30px, 6vw, 65px) 22px;
+        text-align: center;
+        color: #fff;
+        background:
+          radial-gradient(circle at 10% 10%, #a98bd5, transparent 38%),
+          linear-gradient(135deg, #744b9d, #d86da6 62%, #ff8b9d);
+        position: relative;
+        overflow: hidden;
+      }
+      .final-section h2 {
+        max-width: 700px;
+        margin: 13px auto;
+      }
+      .final-section p {
+        line-height: 1.8;
+        max-width: 540px;
+        margin: 0 auto 24px;
+        color: #fff4fa;
+      }
+      footer {
+        text-align: center;
+        color: #a17d92;
+        padding: 25px 15px 42px;
+        font-size: 0.86rem;
+      }
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: #211324d9;
+        backdrop-filter: blur(10px);
+        z-index: 50;
+        display: none;
+        place-items: center;
+        padding: 18px;
+      }
+      .modal.open {
+        display: grid;
+      }
+      .modal-box {
+        position: relative;
+        width: min(100%, 560px);
+        border-radius: 30px;
+        background: #fff9fc;
+        text-align: center;
+        padding: clamp(28px, 6vw, 48px) 25px;
+        box-shadow: 0 30px 100px #160b244d;
+        animation: reveal 0.35s ease-out;
+      }
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(18px) scale(0.94);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      .modal-emoji {
+        font-size: 3.6rem;
+      }
+      .modal-box h3 {
+        font-size: clamp(1.7rem, 5vw, 2.4rem);
+        margin: 12px 0;
+      }
+      .modal-box p {
+        white-space: pre-line;
+        color: #806777;
+        line-height: 1.9;
+      }
+      .modal-close {
+        position: absolute;
+        right: 13px;
+        top: 12px;
+        width: 38px;
+        height: 38px;
+        border: 0;
+        border-radius: 50%;
+        background: #fae5ef;
+        color: #8b315d;
+        font-size: 1.3rem;
+      }
+      .full-surprise {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        display: none;
+        place-items: center;
+        overflow: hidden;
+        text-align: center;
+        padding: 24px;
+        color: #fff;
+        background: radial-gradient(
+          circle at 50% 30%,
+          #d58fce,
+          #8c61b3 52%,
+          #3c285b
+        );
+      }
+      .full-surprise.open {
+        display: grid;
+        animation: fadeIn 0.6s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .full-surprise h2 {
+        font-size: clamp(3rem, 11vw, 8rem);
+        max-width: 950px;
+        margin: 18px auto;
+        line-height: 0.98;
+      }
+      .full-surprise p {
+        max-width: 600px;
+        margin: 0 auto 28px;
+        line-height: 1.9;
+        color: #fff2fc;
+      }
+      .full-surprise .final-heart {
+        font-size: clamp(4rem, 12vw, 8rem);
+        animation: heartbeat 1.3s infinite;
+      }
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        15% {
+          transform: scale(1.13);
+        }
+        30% {
+          transform: scale(1);
+        }
+        45% {
+          transform: scale(1.08);
+        }
+      }
+      .confetti {
+        position: absolute;
+        top: -20px;
+        width: 9px;
+        height: 15px;
+        border-radius: 3px;
+        animation: fall linear forwards;
+        pointer-events: none;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(115vh) rotate(720deg);
+          opacity: 0.15;
+        }
+      }
+      .music-status {
+        font-size: 0.82rem;
+        color: var(--muted);
+        margin-top: 12px;
+      }
+      @media (max-width: 760px) {
+        main {
+          padding-top: 42px;
+        }
+        .journey {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .journey button {
+          min-height: 0;
+          display: grid;
+          grid-template-columns: 48px 1fr;
+          column-gap: 12px;
+          align-items: center;
+          padding: 19px;
+        }
+        .journey .icon {
+          grid-row: span 2;
+          margin: 0;
+        }
+        .journey strong {
+          align-self: end;
+        }
+        .journey small {
+          align-self: start;
+        }
+        .gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .photo-card {
+          min-height: 180px;
+        }
+        .message-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 390px) {
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+        .photo-card {
+          min-height: 200px;
+        }
+        .hero h1 {
+          font-size: 3.1rem;
+        }
+        .btn {
+          max-width: 100%;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      .photo-card {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .photo-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+        transition: transform 0.4s ease;
+      }
+
+      .photo-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .photo-card:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+          to top,
+          rgba(40, 15, 40, 0.78),
+          transparent 65%
+        );
+      }
+
+      .photo-card:after {
+        content: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <div class="floaters" id="heroHearts" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="pill">♡ a little something, just for you</div>
+        <h1>Hey, <em>Priya.</em><br />This is for you.</h1>
+        <p class="hero-copy">
+          Being a coder means I don't always find the right words, but I wanted
+          to make, A tiny corner of the internet filled with memories, words I
+          don't always say out loud.
+        </p>
+        <button class="btn btn-light" id="beginBtn">Click to begin ♡</button>
+        <div class="micro">Made with Love, just for My Totu Bb.</div>
+      </div>
+    </header>
+
+    <main id="journey">
+      <section class="section-head">
+        <div class="eyebrow">Welcome to our little world</div>
+        <h2>Some things deserve their own place.</h2>
+        <p class="muted">
+          Take your time. There's no rush — just little things I wanted you to
+          see.
+        </p>
+      </section>
+
+      <nav class="journey" aria-label="Website sections">
+        <button data-scroll="memories">
+          <span class="icon">📸</span><strong>Our memories</strong
+          ><small>Little moments I want to keep forever</small>
+        </button>
+        <button data-scroll="letter">
+          <span class="icon">💌</span><strong>A special message</strong
+          ><small>Words from my heart to yours</small>
+        </button>
+        <button data-scroll="secret">
+          <span class="icon">🔐</span><strong>A little secret</strong
+          ><small>There's something hidden just for you</small>
+        </button>
+      </nav>
+
+      <section class="panel" id="memories">
+        <div class="section-head">
+          <div class="eyebrow">Photo gallery</div>
+          <h2>Little pieces of us</h2>
+          <p class="muted">
+            Imagine these filled with our favourite photos, silly moments, and
+            places we want to visit.
+          </p>
+        </div>
+        <div class="gallery">
+          <article class="photo-card">
+            <img src="images/2.jpg" alt="Our silly moments" />
+            <b>Our silly moments<span>The ones that make me laugh</span></b>
+          </article>
+          <article class="photo-card">
+            <img src="images/1.jpg" alt="Our silly moments" />
+            <b>Your smile<span>My favourite view</span></b>
+          </article>
+          <article class="photo-card">
+            <img src="images/3.jpg" alt="Our silly moments" />
+            <b>Our UK Trip<span>Best Trip </span></b>
+          </article>
+          <article class="photo-card">
+            <img src="images/Adv.jpg" alt="Our silly moments" />
+            <b>Little adventures<span>More to come</span></b>
+          </article>
+          <article class="photo-card">
+            <img src="images/5.JPEG" alt="Our silly moments" />
+            <b>The little things<span>They mean the most</span></b>
+          </article>
+          <article class="photo-card">
+            <img src="images/4.JPEG" alt="Our silly moments" />
+            <b>Our story<span>From this is all began</span></b>
+          </article>
+        </div>
+      </section>
+
+      <section class="message-grid" id="letter">
+        <article class="letter">
+          <div class="eyebrow">A note for you</div>
+          <h3>Something I want you to know</h3>
+          <p class="type-line">
+            <span id="typedMessage"></span
+            ><span class="cursor" aria-hidden="true"></span>
+          </p>
+          <p style="font-weight: 800; color: #d84e85; margin-bottom: 0">
+            With all my heart, ♡
+          </p>
+        </article>
+        <article class="letter">
+          <div class="eyebrow">Just a few reminders</div>
+          <h3>In case you forget</h3>
+          <p>You are Stronger than you know.</p>
+          <p>Everything is going to be alright.</p>
+          <p>Everything will be okay.</p>
+          <p>Your smile can make an ordinary day feel special.</p>
+          <p>And you never need a special occasion to deserve a little love.</p>
+        </article>
+      </section>
+
+      <section class="secret" id="secret">
+        <div class="secret-lock" id="lockIcon">🔐</div>
+        <div class="eyebrow">A message behind the lock</div>
+        <h2>Can you guess the secret?</h2>
+        <!-- <p class="muted">
+          Enter the secret word to unlock a message. Change the word in the
+          JavaScript to something only you two know.
+        </p> -->
+        <form id="secretForm">
+          <input
+            id="secretInput"
+            type="password"
+            placeholder="Enter the secret word"
+            aria-label="Secret word"
+            autocomplete="off"
+          />
+          <button class="btn btn-rose" type="submit">Unlock my message</button>
+        </form>
+        <div
+          class="secret-result hidden"
+          id="secretResult"
+          aria-live="polite"
+        ></div>
+        <p class="music-status">
+          Hint: our bdays <strong></strong>.
+        </p>
+      </section>
+
+      <section class="final-section" id="lastSurprise">
+        <div class="eyebrow" style="color: #ffe1ee">One last thing</div>
+        <h2>Ready for your final surprise?</h2>
+        <p>
+          One little button. One little reminder. And hopefully one very big
+          smile.
+        </p>
+        <button class="btn btn-light" id="finalBtn">
+          Open the final surprise ✨
+        </button>
+        <div>
+          <button class="btn btn-quiet" id="musicBtn" style="margin-top: 16px">
+            ♫ Play gentle background music
+          </button>
+        </div>
+        <div class="music-status" id="musicStatus" style="color: #fff0fa">
+          Music starts only when you press play.
+        </div>
+      </section>
+    </main>
+    <footer>Made with ♡ — vK</footer>
+
+    <div
+      class="modal"
+      id="welcomeModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="welcomeTitle"
+    >
+      <div class="modal-box">
+        <button
+          class="modal-close"
+          data-close="welcomeModal"
+          aria-label="Close"
+        >
+          ×
+        </button>
+        <div class="modal-emoji">✨</div>
+        <h3 id="welcomeTitle">You found your little surprise.</h3>
+        <p>
+          This page is a tiny reminder that you matter. Explore the memories,
+          read the message, and see what is waiting at the end.
+        </p>
+        <button class="btn btn-rose" data-close="welcomeModal">
+          Let's explore ♡
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="full-surprise"
+      id="fullSurprise"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Final surprise"
+    >
+      <div class="floaters" id="finalHearts" aria-hidden="true"></div>
+      <div style="position: relative; z-index: 1">
+        <div class="final-heart">♥</div>
+        <div class="eyebrow" style="color: #ffe7a6">This is your reminder</div>
+        <h2>You are<br />so very special.</h2>
+        <p>
+          No matter how busy life gets, No Matter what happens, 
+          I hope you always remember that someone
+          is thinking of you, cheering for you, and wishing you every beautiful
+          thing.
+          I'am With You Always.
+          I LOVE YOU SO MUCH, My Totu Bb. ♡
+        </p>
+        <p style="font-size: 1.2rem; font-weight: 800; color: #fff">
+          You make the world a little softer. ♡
+        </p>
+        <button class="btn btn-light" id="backBtn">
+          Keep this moment with me
+        </button>
+      </div>
+    </div>
+
+    <script>
+      /* PERSONALIZE THESE VALUES */
+      const CONFIG = {
+        secretWord: "2317",
+        secretMessage:
+          "Ek Shayari! ♡ Kehte hain saccha pyaar ek hi baar hota hai Shayad isliye ab tak tujhse hi mohabbat hai !! Also I'm so lucky to have you in my life. I love you so much, My Totu Bb. ♡",
+        typedMessage:
+          "I don't always find the perfect words, but I hope you never doubt this: having you in my life makes the ordinary feel a little more magical. Thank you for being exactly who you are. I hope this little effort makes you smile today.",
+        finalTitle: "You are so very special.",
+      };
+
+      const $ = (selector) => document.querySelector(selector);
+      const scrollToSection = (id) =>
+        document
+          .getElementById(id)
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+
+      $("#beginBtn").addEventListener("click", () => {
+        $("#welcomeModal").classList.add("open");
+        scrollToSection("journey");
+      });
+      document.querySelectorAll("[data-scroll]").forEach((button) => {
+        button.addEventListener("click", () =>
+          scrollToSection(button.dataset.scroll),
+        );
+      });
+      document.querySelectorAll("[data-close]").forEach((button) => {
+        button.addEventListener("click", () =>
+          document
+            .getElementById(button.dataset.close)
+            .classList.remove("open"),
+        );
+      });
+      $("#welcomeModal").addEventListener("click", (event) => {
+        if (event.target.id === "welcomeModal")
+          event.currentTarget.classList.remove("open");
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          $("#welcomeModal").classList.remove("open");
+          $("#fullSurprise").classList.remove("open");
+        }
+      });
+
+      /* Typing animation */
+      const typedTarget = $("#typedMessage");
+      let typedIndex = 0;
+      function typeNext() {
+        if (typedIndex < CONFIG.typedMessage.length) {
+          typedTarget.textContent += CONFIG.typedMessage.charAt(typedIndex++);
+          setTimeout(typeNext, 28 + Math.random() * 28);
+        }
+      }
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+              typeNext();
+              observer.disconnect();
+            }
+          },
+          { threshold: 0.25 },
+        );
+        observer.observe($("#letter"));
+      } else {
+        typeNext();
+      }
+
+      /* Secret message unlock */
+      $("#secretForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const guess = $("#secretInput").value.trim().toLocaleLowerCase();
+        const result = $("#secretResult");
+        if (guess && guess === CONFIG.secretWord.toLocaleLowerCase()) {
+          result.textContent = CONFIG.secretMessage;
+          result.classList.remove("hidden");
+          $("#lockIcon").textContent = "🔓";
+          $("#secretInput").value = "";
+        } else {
+          result.textContent =
+            "Not quite! Try the word only the two of you would know.";
+          result.classList.remove("hidden");
+          $("#lockIcon").textContent = "🔐";
+        }
+      });
+
+      /* Final full-screen reveal + confetti */
+      function launchConfetti() {
+        const root = $("#finalHearts");
+        root.replaceChildren();
+        const colors = ["#ffd4e5", "#ffe7a6", "#ffffff", "#ff8aaf", "#d6c0ff"];
+        for (let i = 0; i < 65; i++) {
+          const bit = document.createElement("span");
+          bit.className = "confetti";
+          bit.style.left = Math.random() * 100 + "%";
+          bit.style.background = colors[i % colors.length];
+          bit.style.animationDuration = 3 + Math.random() * 4 + "s";
+          bit.style.animationDelay = Math.random() * 1.8 + "s";
+          bit.style.transform = `rotate(${Math.random() * 180}deg)`;
+          root.appendChild(bit);
+        }
+      }
+      $("#finalBtn").addEventListener("click", () => {
+        $("#fullSurprise").classList.add("open");
+        launchConfetti();
+      });
+      $("#backBtn").addEventListener("click", () => {
+        $("#fullSurprise").classList.remove("open");
+        scrollToSection("lastSurprise");
+      });
+
+      /* Gentle generated background music using Web Audio API. No external audio file required.
+   Browsers require a user gesture before audio can start. */
+      let audioContext = null,
+        masterGain = null,
+        musicTimer = null,
+        noteIndex = 0;
+      const melody = [
+        523.25, 659.25, 783.99, 659.25, 587.33, 698.46, 880, 698.46, 523.25,
+        659.25, 783.99, 1046.5, 880, 783.99, 659.25, 587.33,
+      ];
+      function playNote(frequency, start, duration) {
+        const oscillator = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        oscillator.type = "sine";
+        oscillator.frequency.setValueAtTime(frequency, start);
+        gain.gain.setValueAtTime(0.0001, start);
+        gain.gain.exponentialRampToValueAtTime(0.055, start + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+        oscillator.connect(gain);
+        gain.connect(masterGain);
+        oscillator.start(start);
+        oscillator.stop(start + duration + 0.03);
+      }
+      function musicStep() {
+        if (!audioContext || !masterGain) return;
+        const now = audioContext.currentTime;
+        const freq = melody[noteIndex % melody.length];
+        playNote(freq, now, 0.48);
+        if (noteIndex % 4 === 0) playNote(freq / 2, now, 0.8);
+        noteIndex++;
+      }
+      async function startMusic() {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) {
+          $("#musicStatus").textContent =
+            "This browser does not support generated audio.";
+          return;
+        }
+        if (!audioContext) audioContext = new AudioCtx();
+        await audioContext.resume();
+        if (musicTimer) {
+          clearInterval(musicTimer);
+          musicTimer = null;
+          masterGain.gain.setTargetAtTime(0, audioContext.currentTime, 0.08);
+          $("#musicBtn").textContent = "♫ Play gentle background music";
+          $("#musicStatus").textContent = "Music paused.";
+          return;
+        }
+        masterGain = audioContext.createGain();
+        masterGain.gain.value = 0.35;
+        masterGain.connect(audioContext.destination);
+        noteIndex = 0;
+        musicStep();
+        musicTimer = setInterval(musicStep, 430);
+        $("#musicBtn").textContent = "Ⅱ Pause background music";
+        $("#musicStatus").textContent =
+          "A tiny melody is playing. Press pause whenever you like.";
+      }
+      $("#musicBtn").addEventListener("click", () => {
+        startMusic().catch(() => {
+          $("#musicStatus").textContent =
+            "Audio could not start. Try pressing play again.";
+        });
+      });
+
+      /* Floating hearts */
+      function addHearts(rootId, count) {
+        const root = document.getElementById(rootId);
+        for (let i = 0; i < count; i++) {
+          const heart = document.createElement("span");
+          heart.className = "heart";
+          heart.textContent = ["♡", "♥", "✦"][i % 3];
+          heart.style.left = Math.random() * 100 + "%";
+          heart.style.animationDuration = 9 + Math.random() * 13 + "s";
+          heart.style.animationDelay = -Math.random() * 18 + "s";
+          heart.style.fontSize = 13 + Math.random() * 23 + "px";
+          root.appendChild(heart);
+        }
+      }
+      addHearts("heroHearts", 30);
+      addHearts("finalHearts", 20);
+    </script>
+  </body>
+</html>
